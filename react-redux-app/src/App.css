@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.card-list{
+  max-width: 100%;
+  margin: 10px auto;
+  padding: 5%;
+
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: space-between;
+
+  /* display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: auto;
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  align-content: start;
+  grid-gap: 15px 30px;
+  width: 100%; */
+}
+
+.card{
+  margin-bottom: 2%;
+}
