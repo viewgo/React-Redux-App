@@ -16,22 +16,22 @@ function Card(props) {
   }, []);
 
   console.log(card);
-  if(card){
-      console.log("hello");
-      console.log(card.id);
-      url = `https://img.scryfall.com/cards/png/front/${String(card.id).charAt(0)}/${String(card.id).charAt(1)}/${card.id}.png`;
+  if (card) {
+    console.log("hello");
+    console.log(card.id);
+    url = `https://img.scryfall.com/cards/png/front/${String(card.id).charAt(0)}/${String(card.id).charAt(1)}/${
+      card.id
+    }.png`;
+  } else {
+    console.log("goodbye");
   }
-  else{
-      console.log("goodbye")
-  }
-//   console.log(card.id);
- 
+  //   console.log(card.id);
 
   if (card !== undefined && card !== null) {
     return (
-      <div className="card">
-        <h2>{card.name}</h2>
-        <img class="thumbnail-image" src={url} alt={card.name}></img>
+      <div className="list-container">
+          <h2>{card.name}</h2>
+          <img class="card-image" src={url} alt={card.name}></img>
       </div>
     );
   } else {
