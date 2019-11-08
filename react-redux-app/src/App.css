@@ -9,11 +9,11 @@ body {
 
   display: flex;
   flex-direction: column;
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.content{
+.content {
   width: 100%;
 }
 
@@ -24,15 +24,17 @@ align-items: center;
   margin-top: 20px;
   padding: 10px;
 
-
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .list-container h1 {
   margin: 0 0 10px 0;
 }
 
-.card-image{
-  width: 20%;
+.card-image {
+  width: 500px;
 }
 
 .buttons {
@@ -47,13 +49,40 @@ align-items: center;
   margin: 20px;
   padding: 10px;
   width: 100px;
-  
+
   background-color: #404b69;
   color: #dbedf3;
 }
 
-.buttons button:hover{
+.buttons button:hover {
   cursor: pointer;
+}
+
+.card-info {
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: center;
+
+  width: 70%;
+}
+
+.card-info-image{
+  width: 50%;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-info-details{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: start;
 }
 
 .card-list {

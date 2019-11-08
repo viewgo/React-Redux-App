@@ -30,9 +30,24 @@ function Card(props) {
   if (card !== undefined && card !== null) {
     return (
       <div className="list-container">
-          <h2>{card.name}</h2>
-          <img class="card-image" src={url} alt={card.name}></img>
-      </div>
+          <div className="card-info">
+        <div className="card-info-image">
+          <img className="card-image" src={url} alt={card.name}></img>
+        </div>
+        <div className="card-info-details">
+          
+          <p>{card.name}&nbsp;&nbsp;&nbsp;&nbsp;{card.mana_cost}</p>
+          <p>{card.type_line}</p>
+          <p>{card.oracle_text}</p>
+          {card.power ? <p>{card.power}/{card.toughness}</p> : null}
+          {card.loyalty ? <p>Loyalty: {card.loyalty}</p> : null}
+
+<p>{card.set_name}</p>
+          <p>USD: {card.prices.usd}</p>
+          <p>FOIL: {card.prices.usd_foil}</p>
+
+        </div>
+      </div></div>
     );
   } else {
     return <h2>Loading...</h2>;
