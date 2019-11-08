@@ -8,14 +8,22 @@ body {
   width: 100%;
 
   display: flex;
+  flex-direction: column;
 justify-content: center;
+align-items: center;
+}
+
+.content{
+  max-width: 80%;
+  /* border: 1px solid red; */
 }
 
 .list-container {
-  background-color: #404b69;
+  /* background-color: #404b69; */
   border-radius: 12px;
-  max-width: 1100px;
-  margin: 2% 2%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2%;
   padding: 2%;
 }
 
@@ -31,12 +39,17 @@ justify-content: center;
 }
 
 .buttons button {
+  border: 0;
   margin: 20px;
   padding: 10px;
   width: 100px;
-  border: 0;
-  background-color: #283149;
+  
+  background-color: #404b69;
   color: #dbedf3;
+}
+
+.buttons button:hover{
+  cursor: pointer;
 }
 
 .card-list {

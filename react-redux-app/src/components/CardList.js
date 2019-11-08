@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchmtg } from "../actions";
 
+import { Link } from "react-router-dom";
+
+import Card from "./Card";
 
 function CardList(props) {
   const [pageCounter, setPageCounter] = useState(1);
@@ -21,8 +24,8 @@ function CardList(props) {
 
   return (
     <div className="list-container">
-      <h1>Magic: the Gathering</h1>
-      <h2>Standard Card List</h2>
+      {/* <h1>Magic: the Gathering</h1>
+      <h2>Standard Card List</h2> */}
 
       <div className="buttons">
         <button
@@ -61,22 +64,25 @@ function CardList(props) {
         </button>
       </div>
 
-{props.isFetching && <div>LOADING</div>}
-{props.error && <div>{props.error.message}</div>}
+      {props.isFetching && <div>LOADING</div>}
+      {props.error && <div>{props.error.message}</div>}
 
       <div className="card-list">
-        
-
-
         {props.cards.data.map(card => (
-          <div className="card" key={card.id}>
-            <img class="thumbnail-image" src={card.image_uris.border_crop} alt={card.name}></img>
-            <span class="large">
-              <img src={card.image_uris.border_crop} class="large-image"></img>
-            </span>
-          </div>
+          <Link
+            key={card.id}
+            to={{
+              pathname: `/card/${card.id}`
+            }}
+          >
+            <div className="card" key={card.id}>
+              <img class="thumbnail-image" src={card.image_uris.border_crop} alt={card.name}></img>
+              <span class="large">
+                <img src={card.image_uris.border_crop} class="large-image"></img>
+              </span>
+            </div>
+          </Link>
         ))}
-        
       </div>
 
       {props.cards.data.length === 0 ? null : (
